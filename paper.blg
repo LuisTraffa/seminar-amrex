@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'paper.blg'
-[172] biber-MSWIN64:340> INFO - === 
-[220] Biber.pm:419> INFO - Reading 'paper.bcf'
-[332] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[349] bbl.pm:660> INFO - Writing 'paper.bbl' with encoding 'UTF-8'
-[349] bbl.pm:763> INFO - Output to paper.bbl
-[349] Biber.pm:131> WARN - The file 'paper.bcf' does not contain any citations!
-[350] Biber.pm:133> INFO - WARNINGS: 1
+[59] biber:340> INFO - === Thu Jun  1, 2023, 17:35:34
+[70] Biber.pm:419> INFO - Reading 'paper.bcf'
+[118] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[127] bbl.pm:660> INFO - Writing 'paper.bbl' with encoding 'UTF-8'
+[127] bbl.pm:763> INFO - Output to paper.bbl
+[127] Biber.pm:131> WARN - The file 'paper.bcf' does not contain any citations!
+[127] Biber.pm:133> INFO - WARNINGS: 1

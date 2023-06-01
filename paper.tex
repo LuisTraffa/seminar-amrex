@@ -110,19 +110,25 @@ this can be done in any number of dimensions, depending on the needs of the simu
 
 \subsection{Mesh Simulation}
 
+The goal of a mesh simulation is often to predict 
+physical behavior or solve complex engineering problems.
 Mesh simulation involves the use of computational methods to 
 solve equations over the domain represented by the mesh. This can involve a variety of 
 different equations depending on the problem at hand, but often involves the solution 
-of PDEs. The domain of interest is discretized into a mesh, and the equations are 
-solved at each node or cell of the mesh. The goal of the simulation is often to predict 
-physical behavior or solve complex engineering problems.
+of PDEs. The domain is discretized into a uniform mesh of cells, and the equations are 
+solved at each node or cell of the mesh. This means that the more cells there
+are in the mesh the higher the level of detail, but at the cost of a longer simulation time.
+
 
 \subsection{Adaptive Mesh Refinement}
 
-Mesh refinement, or adaptive mesh refinement (AMR), is 
-a computational technique used to adaptively refine a computational mesh. The concept 
+Adaptive mesh refinement (AMR), is 
+a computational technique used to adaptively refine a computational mesh. During traditional mesh 
+simulations we create a uniform grid and simulate every cell with the same level of detail. However, 
+some areas are less affected by the course of the forces being simulated
+and need less processing power to achive the desired accuracy. The concept 
 behind mesh refinement is to use fine mesh (small cells) in areas where the solution has 
-high gradients or requires high accuracy, and coarse mesh (large cells) in areas where 
+high gradients or requires a lot of accuracy, and coarse mesh (large cells) in areas where 
 the solution is smooth or less important. This technique allows the efficient use of 
 computational resources, improving the accuracy of the solution while reducing 
 computational cost.
@@ -130,7 +136,9 @@ computational cost.
 \section{AMReX: Approach}
 \subsection{Introduction to AMReX}
 
-The AMReX framework is a software library that provides a set of tools to implement AMR algorithms.
+The AMReX framework is a software library that provides different suites to implement AMR algorithms.
+For example, AMReX-Astro is a suite of codes for astrophysical hydrodynamics codes for exascale systems and AMReX-
+Combustion is a distinct suite of adaptive mesh hydrodynamics simulation codes for reacting flows.
 It is developed by the Center for Computational Sciences and Engineering (CCSE) at the Lawrence Berkeley National Laboratory (LBNL).
 The framework is written in C++ and is open source. It is used in a variety of projects, such as the
 Exascale Computing Project (ECP) and the Energy Exascale Earth System Model (E3SM).
@@ -140,6 +148,19 @@ solve systems of partial differential equations and manage data structures and t
 It is designed to be highy performant, easy-to-use, flexible and portable across different architectures.
 Hence, most of the parallelization was abstarcted away, to enable the users to focus on the mathematical and physical
 aspects of their problems. However, users can still access lower level features if the need arises.
+
+\subsection{Key Features}
+
+The most important features of AMReX include:
+
+\begin{itemize}
+    \item Codebase is written in C++, fortrtan and is open source.
+    \item Supports multiple dimensions (1D, 2D, 3D) and multiple levels of refinement.
+    \item Meshes can be centered by cell, face, edge or node.
+    \item Supports a variety of solutions on the hierarchy of the grid.
+    \item Supports particles and embedded boundary method for meshes.
+    \item Block-structures enable the use of differnet sized cells in different blocks.
+\end{itemize}
 
 \subsection{Efficiency Techniques}
 
@@ -154,8 +175,8 @@ Several techniques for efficient usage of resources are used in AMReX.
     It uses a combination of space-filling curve (SFC) based algorithms and two-level hierarchical 
     algorithms for parallelization.
     \item Load Balancing: AMReX uses a dynamic load balancing algorithm to ensure that computational 
-    work is evenly distributed across all available processors, thus minimizing idle time and enhancing 
-    overall performance.
+    work is evenly distributed across all available processors. This minimizes idle time and enhances 
+    overall performance. The default algorith is SFC, but users can also use their own custom algorithms.
     \item Vectorization: AMReX supports the use of modern many-core and multi-core architectures 
     and uses vectorization to exploit these architectures to the fullest.
     \item Asynchronous I/O: AMReX supports parallel I/O, which is particularly useful when dealing with large datasets.
@@ -227,8 +248,10 @@ computing capabilities, GPU support, modularity) would likely have made the auth
 potentially less successful.
 
 \subsection{Publication 2}
-\subsection{Publication 3}
-\subsection{Publication 4}
+
+The second publication is "Adaptive Mesh Refinement Applications for Advection-Diffusion Problems Using AMReX" by Venkata Kanumuru.
+The paper discusses the use of AMReX for solving various engineering problems
+and compares a traditional MPI approach with one that utilizes AMReX. 
 
 \section{Discussion}
 \subsection{Advantages of AMReX}

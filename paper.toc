@@ -8,17 +8,16 @@
 \contentsline {subsection}{\numberline {2.5}Adaptive Mesh Refinement}{4}{subsection.2.5}%
 \contentsline {section}{\numberline {3}AMReX: Approach}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction to AMReX}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Efficiency Techniques}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Portability Across Architectures}{5}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Evaluation}{5}{section.4}%
+\contentsline {subsection}{\numberline {3.2}Key Features}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Efficiency Techniques}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Portability Across Architectures}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Evaluation}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Publication 1}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Publication 2}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Publication 3}{7}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Publication 4}{7}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Discussion}{7}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Advantages of AMReX}{7}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Drawbacks of AMReX}{7}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Comparison with Other Approaches}{7}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Summary and Outlook}{7}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Future Research Directions}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {5.3}Comparison with Other Approaches}{8}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Summary and Outlook}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Future Research Directions}{8}{subsection.6.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
