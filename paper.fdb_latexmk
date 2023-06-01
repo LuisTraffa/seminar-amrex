@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber paper"] 1685633734 "paper.bcf" "paper.bbl" "paper" 1685638944 0
+["biber paper"] 1685633734 "paper.bcf" "paper.bbl" "paper" 1685651484 0
   "./references/references.bib" 1682695371 224 5dea50520f3937187db6770d06b0fec9 ""
-  "paper.bcf" 1685638944 106809 3f2b5274d24c80ce58e79b1cfb1cef7c "pdflatex"
+  "paper.bcf" 1685651484 106809 3f2b5274d24c80ce58e79b1cfb1cef7c "pdflatex"
   (generated)
   "paper.bbl"
   "paper.blg"
   (rewritten before read)
-["pdflatex"] 1685638943 "/home/luis/Documents/Semester4/seminar/paper.tex" "paper.pdf" "paper" 1685638944 0
-  "/home/luis/Documents/Semester4/seminar/paper.tex" 1685638942 16224 1fd32d1f3223f990d32a3a97bbc473bc ""
+["pdflatex"] 1685651483 "/home/luis/Documents/Semester4/seminar/paper.tex" "paper.pdf" "paper" 1685651484 0
+  "/home/luis/Documents/Semester4/seminar/paper.tex" 1685651483 16185 86eb4576d0dc7fdc8c7bdc5ebd38fb7a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1680514707 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1680514707 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1680514707 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -141,12 +141,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1680514707 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1682695205 4621091 e8048671013c9c22f986c40e2ae8e1e8 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1682695190 8204113 1976cb8050612b9bc7c05082eb4fdf59 ""
-  "paper.aux" 1685638944 9630 10086faa9396b3b10cea19fd77747b07 "pdflatex"
+  "paper.aux" 1685651484 9260 e95499d95d32a61e81f57e992826d08b "pdflatex"
   "paper.bbl" 1685633735 466 ee04f40f768daeed26442158e95aba61 "biber paper"
-  "paper.out" 1685638944 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "paper.run.xml" 1685638944 2420 4adffbb81cd6d92d82e83367aa1363de "pdflatex"
-  "paper.tex" 1685638942 16224 1fd32d1f3223f990d32a3a97bbc473bc ""
-  "paper.toc" 1685638944 1856 49cf16d458422accf9f9de9deb2f6ee1 "pdflatex"
+  "paper.out" 1685651484 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "paper.run.xml" 1685651484 2420 4adffbb81cd6d92d82e83367aa1363de "pdflatex"
+  "paper.tex" 1685651483 16185 86eb4576d0dc7fdc8c7bdc5ebd38fb7a ""
+  "paper.toc" 1685651484 1775 cbdd3949c77de44c6591910edd83479e "pdflatex"
   (generated)
   "paper.aux"
   "paper.bcf"

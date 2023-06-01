@@ -33,9 +33,9 @@
 \section{Introduction}
 \subsection{Area and Problem}
 
-HPC systems are used to quikcly solve mathematical problems. Often times 
+HPC systems are used to quickly solve mathematical problems. Often 
 these problems are near impossible to solve in a reasonable amount of time.
-Therefore, these systems employ techniques from numerival analysis to give approximate solutions,
+Therefore, these systems employ techniques from numerical analysis to give approximate solutions,
 instead of exact ones. 
 
 One such technique is called adaptive mesh refinement (AMR). It is used during simulations of various natural 
@@ -46,35 +46,34 @@ keeping the computational cost low.
 \section{Prerequisites}
 
 In order to understand the AMReX framework, it is necessary to have a basic understanding of some concepts. 
-These concepts are meshes, partial differential equations, mesh simulation and adaptive mesh refinement.
-This section will provide a brief introduction to these concepts.
+These concepts include meshes, partial differential equations, mesh simulation and adaptive mesh refinement.
+This section will provide a brief introduction to these topics.
 
 \subsection{Meshes}
 
 A mesh is a geometrical representation of a physical domain, often a space, 
 which is broken down into small, discrete elements. These elements can be in various shapes 
-such as triangles, rectangles, or hexagons in 2D, and tetrahedra, prisms, or hexahedra in 3D. 
-These small units are interconnected by nodes or vertices, forming a network that covers the 
-entire domain. Mesh is typically used in numerical simulations to 
-discretize a continuum domain for solving complex mathematical problems.
+such as triangles, rectangles, or hexagons in 2D, and tetrahedra, prisms, or hexahedra in 3D.
+The elements are often referred to as cells or faces, and the mesh is often referred to as a grid.
+These small units are interconnected by edges that connect the vertices or nodes, forming a network that covers the 
+entire domain. A Mesh is typically used in numerical simulations to 
+discretize a continuous domain for solving complex mathematical problems.
 
 \subsection{Partial Differential Equations (PEDs)}
 
 A PDE is a type of differential equation that 
 contains unknown multivariable functions and their partial derivatives. PDEs are used to 
-formulate problems involving functions of several variables, and are prevalent in physics 
-and engineering. They are often used to describe wave propagation, heat diffusion, fluid flow, 
-or quantum mechanics, amongst others.
+formulate problems involving functions of several variables, and are used frequently in physics 
+and engineering. They are often used to describe wave propagation, heat diffusion, fluid flow, quantum mechanics, etc.
 
 When you have a PDE, it generally represents a continuum problem, meaning it is defined 
-on a continuous domain. The domain can represent various physical spaces or timescales, 
+on a continuous domain that changes with time. The domain can represent various physical spaces or timescales, 
 such as the space inside a heat-conducting bar (1D), weather patterns over a geographical 
-area (2D), smoke rising from a fire (3D), or even change in space 
-and time (4D).
+area (2D), smoke rising from a fire (3D).
 
 In real-world applications, the domain can be quite complex (such as the shape of an 
-aircraft wing, or the topology of a mountain range), and the PDE might not have a simple 
-analytical solution. That's where numerical methods come in, which attempt to find 
+airplane wing, or the topology of a mountain range), and the PDE might not have a simple 
+analytical solution. That's where numerical methods are useful, which attempt to find 
 approximate solutions by solving the PDE over a discretized version of the domain.
 
 \subsection{Meshes and PEDs}
@@ -83,11 +82,10 @@ The relationship between meshes and PEDs is at the center of many numerical meth
 in computational physics and engineering. Therefore it is important to understand how 
 the concepts relate to one another.
 
-This is where the concept of a mesh becomes crucial. A mesh is a discretized representation 
-of the domain, which breaks down the continuous space into discrete, manageable elements. 
+This is where the concept of a mesh becomes crucial. A mesh breaks down the continuous space into discrete, manageable elements. 
 Each element of the mesh will have nodes (points), edges (lines), or faces (surfaces), 
-depending on whether the mesh is 1D, 2D, or 3D, respectively. The more complex the geometry 
-and the solution, the higher dimensionality you might need.
+depending on whether the mesh is 1D, 2D, or 3D, respectively. When the geometry
+and the solution are more complex, the higher dimensionality that is required.
 
 The PDE is solved on this mesh. We take the continuous 
 PDE, which has derivatives, and we approximate these derivatives at the nodes, edges, or 
@@ -95,18 +93,15 @@ faces of the mesh. The accuracy of this approximation increases as the size of t
 elements decreases. This process results in a large system of algebraic equations that we 
 can solve using linear or nonlinear solvers.
 
-For example, let's consider a 2D heat conduction problem described by a PDE. The mesh might 
+For example, let's consider a 2D heat conduction problem described by a PDE (How does the heat flow from the point of the material
+that is heated to other points). The mesh might 
 be a grid of squares over the domain, and at each grid point, we would approximate the PDE. 
 This approximation, when solved, would give us the temperature at each of these grid points.
 
 In terms of dimensionality, while I used 2D and 3D as examples for simplicity, this concept 
 can be extended to any number of dimensions. However, in practice, 1D, 2D, and 3D are most 
-common due to the physical realities we most often simulate, and the computational cost 
+common due to the physical reality we usually simulate, and the computational cost 
 associated with higher dimensional simulations.
-
-To summarize, the process of solving a PDE using a mesh is a way of transforming a 
-complex, continuous problem into a discrete problem that can be solved numerically, and 
-this can be done in any number of dimensions, depending on the needs of the simulation.
 
 \subsection{Mesh Simulation}
 
@@ -118,6 +113,8 @@ different equations depending on the problem at hand, but often involves the sol
 of PDEs. The domain is discretized into a uniform mesh of cells, and the equations are 
 solved at each node or cell of the mesh. This means that the more cells there
 are in the mesh the higher the level of detail, but at the cost of a longer simulation time.
+Simulation steps are performed consecutively, as the next step depends on the results of the previous step.
+This makes simulations difficult to parallelize.
 
 
 \subsection{Adaptive Mesh Refinement}
@@ -136,17 +133,19 @@ computational cost.
 \section{AMReX: Approach}
 \subsection{Introduction to AMReX}
 
-The AMReX framework is a software library that provides different suites to implement AMR algorithms.
+The AMReX framework is a software library that provides different suites to implement AMR algorithms and manages the 
+grid-datastructures and parallel communications during the computation of mesh simulations. 
+It is developed by the Center for Computational Sciences and 
+Engineering (CCSE) at the Lawrence Berkeley National Laboratory (LBNL).
 For example, AMReX-Astro is a suite of codes for astrophysical hydrodynamics codes for exascale systems and AMReX-
 Combustion is a distinct suite of adaptive mesh hydrodynamics simulation codes for reacting flows.
-It is developed by the Center for Computational Sciences and Engineering (CCSE) at the Lawrence Berkeley National Laboratory (LBNL).
 The framework is written in C++ and is open source. It is used in a variety of projects, such as the
 Exascale Computing Project (ECP) and the Energy Exascale Earth System Model (E3SM).
 
 This framework aids in developing block-strucutred AMR algorithms by providing a set of tools to
 solve systems of partial differential equations and manage data structures and the parallelization of the algorithms.
 It is designed to be highy performant, easy-to-use, flexible and portable across different architectures.
-Hence, most of the parallelization was abstarcted away, to enable the users to focus on the mathematical and physical
+Hence, most of the parallelization was abstracted away, to enable the users to focus on the mathematical and physical
 aspects of their problems. However, users can still access lower level features if the need arises.
 
 \subsection{Key Features}
@@ -154,12 +153,11 @@ aspects of their problems. However, users can still access lower level features 
 The most important features of AMReX include:
 
 \begin{itemize}
-    \item Codebase is written in C++, fortrtan and is open source.
     \item Supports multiple dimensions (1D, 2D, 3D) and multiple levels of refinement.
     \item Meshes can be centered by cell, face, edge or node.
     \item Supports a variety of solutions on the hierarchy of the grid.
-    \item Supports particles and embedded boundary method for meshes.
-    \item Block-structures enable the use of differnet sized cells in different blocks.
+    \item Supports particles and embedded boundary methods (When edge of the cell does not align with the physical object to be simulated, the boudary embedding allows for greater accuracy).
+    \item Block-structures enable the use of different sized cells in different blocks.
 \end{itemize}
 
 \subsection{Efficiency Techniques}
@@ -173,13 +171,14 @@ Several techniques for efficient usage of resources are used in AMReX.
     \item Parallelization: AMReX has strong support for parallelization with both MPI (Message Passing Interface) 
     and OpenMP, allowing it to run efficiently on distributed-memory and shared-memory systems. 
     It uses a combination of space-filling curve (SFC) based algorithms and two-level hierarchical 
-    algorithms for parallelization.
+    algorithms for parallelization. AMReX also supports CUDA for GPUs. When combining MPI, CUDA and OpenMP, AMReX achieves
+    the highest performace.
     \item Load Balancing: AMReX uses a dynamic load balancing algorithm to ensure that computational 
     work is evenly distributed across all available processors. This minimizes idle time and enhances 
-    overall performance. The default algorith is SFC, but users can also use their own custom algorithms.
+    overall performance. The default algorithm is SFC based, but users can also use their own custom algorithms.
     \item Vectorization: AMReX supports the use of modern many-core and multi-core architectures 
     and uses vectorization to exploit these architectures to the fullest.
-    \item Asynchronous I/O: AMReX supports parallel I/O, which is particularly useful when dealing with large datasets.
+    \item AMReX has a runtime that can determine which steps can be computed ahead of time, by constructing a dependency graph. This way the limitation of simulation can be slightly bypassed.
 \end{itemize}
 
 \subsection{Portability Across Architectures}
@@ -193,42 +192,41 @@ with upcoming exascale architectures.
 
 To evaluate the framework, we will look at several papers that use AMReX to solve various problems.
 
-\subsection{Publication 1}
+\subsection{Publication}
 
-The 1st publication is "Meeting the Challenges of Modeling Astrophysical Thermonuclear Explosions: 
+This publication is "Meeting the Challenges of Modeling Astrophysical Thermonuclear Explosions: 
 Castro, Maestro, and the AMReX Astrophysics Suite" by M. Zingale.
 
 He discusses the use of the AMReX suite of astrophysics codes for modeling stellar astrophysics phenomena. 
-The authors focus on two codes in particular: Maestro and Castro.
+The authors focus on two AMReX suites. In particular: Maestro and Castro.
 
 Maestro is designed to efficiently model subsonic convective flows, while Castro models the highly 
-compressible flows associated with stellar explosions. Both codes are built on the block-structured 
-adaptive mesh refinement library AMReX, which manages the grid data-structures and parallel communications.
+compressible flows occuring in stellar explosions. Both codes are built on AMReX.
 
 The authors discuss the application of these codes to model phenomena such as Type Ia supernovae and X-ray bursts.
 They also discuss the challenges of making these codes performant on current and future many-core and GPU-based architectures.
 
 The paper also discusses the science applications of these codes. For example, Maestro has been applied to 
-convection in the Chandrasekhar-mass model for Type Ia supernovae, the sub-Chandra model for Type Ia 
-supernovae, X-ray bursts, and convection in massive stars. Castro, on the other hand, has been applied to 
-core-collapse supernovae, radiative shock breakout in supernovae, population III pair-instability 
-supernovae, the Chandra model for Type Ia supernovae, the sub-Chandra Type Ia supernovae model, and white 
-dwarf mergers as a model for Type Ia supernovae.
+convection in the Chandrasekhar-mass model and the sub-Chandra model for Type Ia 
+supernovae, X-ray bursts, and convection in massive stars. 
+Castro, on the other hand, has been applied to 
+core-collapse supernovae, radiative shock breakout in supernovae and white 
+dwarf mergers.
 
-The authors also discuss their efforts to port their microphysics, particularly reaction networks, to GPUs. 
-They have created a small proxy app, StarLord, from Castro with just the hydrodynamics and stellar equation 
-of state. They have seen significant performance gains with the CUDA version of their reaction networks, even 
+The authors also discuss their efforts to port their microphysics, reaction networks, to GPUs. 
+They have created a small proxy app from Castro with just the hydrodynamics and stellar equation 
+of the current state. They have seen significant performance gains with the CUDA version of their reaction networks, even 
 for moderate-sized networks.
 
 The paper concludes by discussing future development efforts for Maestro and Castro, including higher-order 
 hydrodynamics and time-integration, rotation, stronger coupling between hydrodynamics and reactions, new solvers, 
 and finishing the GPU port.
 
-In the context of this paper, AMReX was vital for several reasons:
+In the context of this paper, AMReX was vital for a number reasons:
 
 Efficient Handling of Complex Grid Structures: Astrophysical phenomena like stellar explosions involve a wide 
 range of length and time scales, which makes them challenging to model. AMReX's adaptive mesh refinement allows 
-for high resolution where it's needed (e.g., at the site of an explosion), while using coarser resolution elsewhere. 
+for high resolution where it's needed (e.g., at the center of an explosion), while using coarser resolution elsewhere (e.g. where the explosion has not yet reached). 
 This makes simulations more computationally efficient.
 
 Parallel Computing Capabilities: The simulations discussed in the paper are computationally intensive and require 
@@ -240,18 +238,13 @@ support for GPU computing, which is crucial for achieving the performance gains 
 
 Modularity: AMReX allows for the integration of different physics modules (like hydrodynamics, reactions, etc.) in a 
 modular way. This is important for the authors as they discuss the need for stronger coupling between hydrodynamics 
-and reactions in their future work.
+and reactions in their future work. Integrating these modules is curently rather challenging.
 
 As for why another framework might not have been as good, it would depend on the specific features and capabilities 
 of that framework. However, a framework lacking in any of the above areas (adaptive mesh refinement, parallel 
 computing capabilities, GPU support, modularity) would likely have made the authors' work more difficult and 
 potentially less successful.
 
-\subsection{Publication 2}
-
-The second publication is "Adaptive Mesh Refinement Applications for Advection-Diffusion Problems Using AMReX" by Venkata Kanumuru.
-The paper discusses the use of AMReX for solving various engineering problems
-and compares a traditional MPI approach with one that utilizes AMReX. 
 
 \section{Discussion}
 \subsection{Advantages of AMReX}
@@ -267,14 +260,14 @@ utilization of resources.
 Despite its numerous advantages, AMReX also has its challenges. For instance, there 
 could be a steep learning curve for beginners, especially for those not familiar 
 with C++. Furthermore, while AMReX provides support for a variety of architectures, optimizing 
-it for a specific hardware could require a deep understanding of that architecture and 
+it for a specific hardware or a problem that requires many different AMReX suites could require a deep understanding of that architecture and 
 could be time-consuming.
 
 \subsection{Comparison with Other Approaches}
 
 Compared to other software frameworks for AMR and high-performance computing, AMReX 
-stands out with its combination of power and flexibility. While other frameworks 
-may offer similar capabilities, few can match the breadth of features and level 
+stands out with its combination of computing power and flexibility. While other frameworks 
+may offer similar capabilities, few can match the high number of features and level 
 of support provided by AMReX.
 
 \section{Summary and Outlook}
@@ -288,7 +281,7 @@ optimization, it offers considerable advantages in terms of efficiency and accur
 
 Future work with AMReX will likely focus on further enhancing its capabilities, improving 
 user-friendliness, and expanding its application in emerging fields. With ongoing developments 
-in hardware, particularly in quantum and neuromorphic computing, AMReX's flexibility and 
-adaptability will be crucial.
+in hardware, particularly in quantum computing, AMReX's flexibility and 
+adaptability in regards to the integration of its modules will be crucial.
 
 \end{document}

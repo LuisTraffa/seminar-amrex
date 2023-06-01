@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.28)  1 JUN 2023 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.28)  1 JUN 2023 22:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -838,12 +838,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [3
 
-] [4] [5{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6]
-Overfull \hbox (4.83095pt too wide) in paragraph at lines 252--255
-\T1/cmr/m/n/12 The sec-ond pub-li-ca-tion is "Adap-tive Mesh Re-fine-ment Ap-pli-ca-tions for Advection-Diffusion
+] [4]
+Overfull \hbox (5.35141pt too wide) in paragraph at lines 171--176
+\T1/cmr/m/n/12 AM-ReX also sup-ports CUDA for GPUs. When com-bin-ing MPI, CUDA and OpenMP,
  []
 
-[7] [8] (./paper.aux)
+[5{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6] [7] [8] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'paper.run.xml'.
@@ -851,18 +851,18 @@ Package logreq Info: Writing requests to 'paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25946 strings out of 476025
- 520952 string characters out of 5796532
+ 25944 strings out of 476025
+ 520932 string characters out of 5796532
  1860388 words of memory out of 5000000
- 46098 multiletter control sequences out of 15000+600000
+ 46097 multiletter control sequences out of 15000+600000
  524602 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,7n,106p,10639b,954s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,8n,106p,10639b,956s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on paper.pdf (8 pages, 138998 bytes).
+Output written on paper.pdf (8 pages, 138934 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 192 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

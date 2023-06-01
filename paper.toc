@@ -12,12 +12,11 @@
 \contentsline {subsection}{\numberline {3.3}Efficiency Techniques}{5}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Portability Across Architectures}{6}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Evaluation}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Publication 1}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Publication 2}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.1}Publication}{6}{subsection.4.1}%
 \contentsline {section}{\numberline {5}Discussion}{7}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Advantages of AMReX}{7}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Drawbacks of AMReX}{7}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Comparison with Other Approaches}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Comparison with Other Approaches}{7}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Summary and Outlook}{8}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Future Research Directions}{8}{subsection.6.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
